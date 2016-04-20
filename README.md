@@ -1,8 +1,16 @@
 # cli
 presentation for command line interface tools for linux/unix
 ## cd
-Go back to previous directory
-```cd -```
+### Go back to previous directory
+```
+cd -
+```
+### Go to home directory 
+```
+cd
+# or
+cd ~
+```
 
 ## ls
 ### size in human readable form
