@@ -36,6 +36,12 @@ tail -5
 tail -n 5
 ```
 
+## basename
+returns filename of path provided in argument
+
+## dirname
+returns folder of given pathname
+
 ## sed
 `sed` stands for Stream EDitor often used for editing on the fly some file(s) or standard output.
 TODO
