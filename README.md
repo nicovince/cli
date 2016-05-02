@@ -35,12 +35,22 @@ get the 10 last lines of a file (or stdin)
 tail -5
 tail -n 5
 ```
+### Monitor a file on live
+```tail -f <file>```
+Particulary useful for log files
 
 ## basename
 returns filename of path provided in argument
+```basename /path/to/foo
+foo```
+pathname does not have to be a path to a valid file
 
 ## dirname
 returns folder of given pathname
+```dirname /path/to/foo
+/path/to```
+pathname does not have to be a path to a valid file
+
 
 ## sed
 `sed` stands for Stream EDitor often used for editing on the fly some file(s) or standard output.
