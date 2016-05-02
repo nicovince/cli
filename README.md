@@ -71,8 +71,7 @@ sed '3,5d'```
 
 If you want to modify an existing files, instead of having sed doing modifications on standard input you can use ```-i``` flag
 ```sed -i 's/search/replace/g' filename
-sed -i.bak 's/search/replace/g' filename
-```
+sed -i.bak 's/search/replace/g' filename```
 
 Sed can memorize patterns on the search side to reuse them on the replace side by using escaped parenthesis :
 ``` head README.md  | sed 's/\(#*\)\(.*\)$/\1\2\1/'```
