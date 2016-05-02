@@ -91,6 +91,7 @@ And execute the script on a file
 
 ```/``` delimiter for commands can be replaced with ```:,#%``` (non exhaustive)
 
+tutorial : http://www.grymoire.com/Unix/Sed.html
 
 ## grep
 `grep` stands for Get Regular ExPression, it outputs the line from stdin or specified files matching a given pattern (regular expression, aka regexp)
@@ -118,11 +119,29 @@ command line calculator
 TODO
 
 ## xargs
-transform standard input and turn it into arguments to provided command
-TODO
+transform standard output of a command and and turn it into arguments to a piped command
 
-## bash shortcut
-TODO
+remove files containing a pattern
+
+```grep "pattern" -l | xargs rm -i```
+
+By default, arguments are pushed at the end of the command, you may want to insert them in the middle :
+
+```grep "pattern" -l | xargs -I{} cp {} destination_folder```
+
+## bash shortcuts
+- `ctrl-a` go to beginning of the line
+- `ctrl-e` go to end of the line
+- `ctrl-u` remove characters from cursor to beginning of the line
+- `ctrl-k` remove characters from cursor to end of the line
+- `ctrl-w` remove previous word
+- `ctrl-y` paste characters removed with previous ctrl-command
+- `alt-b` move cursor backward by a word
+- `alt-f` move cursor forward by a word
+- `ctrl-b` move cursor backward by a character
+- `ctrl-f` move cursor forward by a character
+
+Those shortcuts can be used in many programs (which uses readline library)
 
 ## watch
 Repeatedly run a command to monitor its output
@@ -139,9 +158,27 @@ TODO
 ## man
 Stands for MANual, gives manual page of provided command/function
 
+use `/pattern` to search forward for a particular pattern 
+use `?pattern` to search backward for a particular pattern 
+use `q` t quit
+
+```
+man man
+man woman
+```
+
 ## tar
-Stands for Tape ARchive, while most of you were shitting in diapers, files were saved on tape.
+Stands for Tape ARchive, a little while ago, the main support for storage were tapes. It is still used for backup solutions.
+
 `tar` is used to archive files into a .tar file
+
+```tar cf archive.tar <list of files>```
+
+You can add compression with `z` or `j` flag, in that case you should suffix your archive with respectively `.gz` or `bz2`
+
+`tar czf archive.tar.gz <list of files>```
+
+to extract simply replace `c` with `x`
 
 ## vim
 THE BEST EDITOR IN TOWN
