@@ -158,9 +158,9 @@ TODO
 ## man
 Stands for MANual, gives manual page of provided command/function
 
-use `/pattern` to search forward for a particular pattern 
-use `?pattern` to search backward for a particular pattern 
-use `q` to quit
+- use `/pattern` to search forward for a particular pattern 
+- use `?pattern` to search backward for a particular pattern 
+- use `q` to quit
 
 ```
 man man
