@@ -70,18 +70,23 @@ Used to perform automatic edititon on an input stream or an existing file :
 sed '3,5d'```
 
 If you want to modify an existing files, instead of having sed doing modifications on standard input you can use ```-i``` flag
-```sed -i 's/search/replace/g' filename
-sed -i.bak 's/search/replace/g' filename```
+```
+sed -i 's/search/replace/g' filename
+sed -i.bak 's/search/replace/g' filename
+```
 
 Sed can memorize patterns on the search side to reuse them on the replace side by using escaped parenthesis :
-``` head README.md  | sed 's/\(#*\)\(.*\)$/\1\2\1/'```
+```head README.md  | sed 's/\(#*\)\(.*\)$/\1\2\1/'```
 
 If you have multiple operations to perform you can either pipe them, or put them in a sed script (script.sed, with executable rights)
-``` #!/bin/sed -f
+```
+#!/bin/sed -f
 s/#/=/g
 s/^\(=*\)\(.*\)/\1\2 \1/
 ```
+
 And execute the script on a file
+
 ```script.sed README.md```
 
 ```/``` delimiter for commands can be replaced with ```:,#%``` (non exhaustive)
