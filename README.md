@@ -122,7 +122,16 @@ TODO
 
 ## bc
 command line calculator
-TODO
+
+By default it does not supports a lot of arithmetic functions (cos, sin, log, ...) but definitions can be provided.
+
+it can read from stdin and respects operator precedence :
+
+``` echo "5+5*3" | bc
+20
+ echo "(5+5)*3" | bc
+30
+```
 
 ## xargs
 transform standard output of a command and and turn it into arguments to a piped command
@@ -151,15 +160,25 @@ Those shortcuts can be used in many programs (which uses readline library)
 
 ## watch
 Repeatedly run a command to monitor its output
-TODO
+
+You can highlight difference with previous output with `-d` flag, 
+
+```
+watch -dc ls
+```
 
 ## df
-Reports usage of partitions mounted
-TODO
+Reports disk usage of partitions mounted
+
+use `-h` to get a numan readable size.
 
 ## du
-Stands for Disk Usage, reports size used by current directory
-TODO
+Stands for Disk Usage, reports size used by files in current folder and sub-folders
+
+If you are interested in the size of current folder, without the details of all the files use 
+```du -s```
+
+Add `-h` flag to get a human readable size.
 
 ## man
 Stands for MANual, gives manual page of provided command/function
