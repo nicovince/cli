@@ -106,8 +106,14 @@ Often used to manipulate columns from a file of standard input.
 TODO
 
 ## sort
-Sort lines
-TODO
+Sort lines of a file alphabetically
+
+You can specify which key can be used for sorting `-k`
+
+By default 47 is higher than 371, use `-n` for numerical sort
+
+To sort `ls -lh` output by size, use `-h` flag, sort will interpret K,M,G suffix correctly
+
 
 ## screen
 Terminal emulator, allows user to open a session on a computer, and reattach to that same session remotely
