@@ -95,11 +95,30 @@ tutorial : http://www.grymoire.com/Unix/Sed.html
 
 ## grep
 `grep` stands for Get Regular ExPression, it outputs the line from stdin or specified files matching a given pattern (regular expression, aka regexp)
-TODO
+
+Use `--color=auto` to highlight your matches (`alias grep='grep --color=auto'`)
+
+```grep ring text
+grep "\<ring\>" text # Search for the word ring using word boundary patterns
+grep "\<Ring\>" text
+grep -w Ring text
+grep "\<ring\>" text -i```
+
+- `-l` if you are only interested in the filenames for which there is a match
+- `-L` if you are only interested in the filenames for which there is no match
+- `-H` to force grep to display filename
+- `-h` to prevent grep from displaying filename
+- `-c` to count number of lines matching (not number of match)
+- `-o` display only the matching part `echo -e "foo bar\nfoooo" | grep fo* -o`
+- `-v` display lines which do not match the pattern
+- `-A 2` display two lines of context after the match
+- `-B 2` display two lines of context before the match
+
 
 ## find
 find the set of files matching the request
 TODO
+
 
 ## awk/gawk
 Used to manipulate columns from a file or standard input and print it on standard output.
@@ -112,15 +131,23 @@ print second column :
 
 more infos : https://linuxconfig.org/learning-linux-commands-awk
 
+
 ## sort
-Sort lines of a file alphabetically
+Sort lines of a file (or standard input) alphabetically
+
+```cat text | sort```
 
 You can specify which key can be used for sorting `-k`
+```echo -e "alice 9\nbob 200\ncharlie 1200\ndoug 35" | sort -k 2```
 
-By default 47 is higher than 371, use `-n` for numerical sort
+By default 9 is higher than 1200, use `-n` for numerical sort
 
-To sort `ls -lh` output by size, use `-h` flag, sort will interpret K,M,G suffix correctly
+To sort values which uses K, M, G suffix, use the `-h` flag
+```echo -e "alice 9K\nbob 200M\ncharlie 1200G\ndoug 35" | sort -k 2 -h```
 
+
+## uniq
+TODO
 
 ## screen
 Terminal emulator, allows user to open a session on a computer, and reattach to that same session remotely
@@ -156,6 +183,19 @@ it can read from stdin and respects operator precedence :
  echo "(5+5)*3" | bc
 30
 ```
+
+
+## lftp
+command line ftp, better than `ftp`, supports tab completion.
+- `put file` send file to server
+- `mput file1 file2` send list of files to server
+- `get file` get file from server
+- `mget file1 file2` get list of files from server
+- `mirror directory` get full directory
+- `mirror -R directory` send full directory
+- `cd` change directory on server side
+- `lcd` change directory on local side
+
 
 ## xargs
 transform standard output of a command and and turn it into arguments to a piped command
