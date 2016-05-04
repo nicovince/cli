@@ -197,6 +197,14 @@ command line ftp, better than `ftp`, supports tab completion.
 - `lcd` change directory on local side
 
 
+## scp
+TODO
+
+
+## rsync
+TODO
+
+
 ## xargs
 transform standard output of a command and and turn it into arguments to a piped command
 
