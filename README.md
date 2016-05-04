@@ -101,9 +101,16 @@ TODO
 find the set of files matching the request
 TODO
 
-## awk
-Often used to manipulate columns from a file of standard input.
-TODO
+## awk/gawk
+Used to manipulate columns from a file or standard input and print it on standard output.
+
+print second column :
+
+```echo -e "1 2 3\n4 5 6" | gawk '{print "$2"}'```
+
+`$0` stands for all columns.
+
+more infos : https://linuxconfig.org/learning-linux-commands-awk
 
 ## sort
 Sort lines of a file alphabetically
