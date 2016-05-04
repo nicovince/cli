@@ -118,7 +118,24 @@ To sort `ls -lh` output by size, use `-h` flag, sort will interpret K,M,G suffix
 ## screen
 Terminal emulator, allows user to open a session on a computer, and reattach to that same session remotely
 screen is resilient to broken connection, logout from main session. Unfortunately it is not yet resilient to power outage/reboot.
-TODO
+
+To reattach to a screen session, it must be detached first `-d` flag, and it is reattached with the `-r` flag. If no session exists, it will fail. Using `-RD` flags will starts a screen session if none exists.
+```screen -RD```
+
+You can have multiple screen session running, use `screen -ls` to list them, and specify which session you want to attach to after the reattach flag (`-R` or `-r`).
+
+You can specify the name of a screen session with `-S flag`
+
+```screen -S unicorn```
+
+Inside screen, you can send commands to create, new tabs, scroll (one major drawback of screen is that by default, you can no longer use your terminal scrollbar to view the history). All screen commands starts with `ctrl-a` followed by a letter :
+- `ctrl-a d` detach from your current screen session
+- `ctrl-a c` creates a new tab with a shell
+- `ctrl-a <space>` go to next tab
+- `ctrl-a '"'` display list of available tabs, use arrow keys and enter to select one
+- `ctrl-a A` prompt to rename current tab
+- `ctrl-a 1` jump to tab number 1
+- `ctrl-a <escape>` switch to history scrolling mode (copy-mode), use arrow keys, 'j', 'k' or 'page-up', 'page-down' to navigate. Type ':' to exit this mode.
 
 ## bc
 command line calculator
