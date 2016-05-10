@@ -178,7 +178,8 @@ By default it does not supports a lot of arithmetic functions (cos, sin, log, ..
 
 it can read from stdin and respects operator precedence :
 
-``` echo "5+5*3" | bc
+```
+echo "5+5*3" | bc
 20
  echo "(5+5)*3" | bc
 30
