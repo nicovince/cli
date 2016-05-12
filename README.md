@@ -117,8 +117,17 @@ grep "\<ring\>" text -i```
 
 ## find
 find the set of files matching the request
-TODO
 
+- pattern name
+- type of file to search for (file, directory, ...)
+- owner of the file
+- group of the file
+- file last access time
+- file last modification time
+- size of the file
+- and many, many, many more
+
+more infos : `man find` / google
 
 ## awk/gawk
 Used to manipulate columns from a file or standard input and print it on standard output.
@@ -147,7 +156,8 @@ To sort values which uses K, M, G suffix, use the `-h` flag
 
 
 ## uniq
-TODO
+Suppress identical adjacent lines. Often used after a `sort` operation.
+
 
 ## screen
 Terminal emulator, allows user to open a session on a computer, and reattach to that same session remotely
@@ -199,11 +209,19 @@ command line ftp, better than `ftp`, supports tab completion.
 
 
 ## scp
-TODO
+Stands for Secure CoPy : copy a file to a remote ssh-able location
 
+```
+scp local_file user@remote:/location/on/remote/
+scp user@remote:/location/on/remote/remote_file ./
+```
 
 ## rsync
-TODO
+Synchronize two directories (one of them can be a remote). It analyse difference between the two directories and sends only new or modified files.
+
+```
+rsync -avz src_directory user@remote:/target/dir
+```
 
 
 ## xargs
