@@ -333,9 +333,56 @@ You can add compression with `z` or `j` flag, in that case you should suffix you
 
 to extract simply replace `c` with `x`
 
-## vim
-THE BEST EDITOR IN TOWN
 
-## emacs
-Escape-Meta-Alt-Control-Shift
-Eight Mega And Constantly Swapping (this was funny back in the 80 when computers suffered from a lack of RAM)
+## iotop
+`top` for input output operations
+
+
+## wget
+Web downloader, can download file or whole website
+
+
+## convert
+Part of `image-magick` tool suite, can be used to convert, crop, resize images
+
+
+## diff
+perform diff between files
+
+```
+diff file1 file2
+diff -U2 file1 file2
+```
+
+
+## pushd/popd
+used to push/pop directories into a stack for later use
+
+```
+pwd
+--> /here
+pushd .
+cd /somewhere/else
+pushd .
+cd /another/place
+popd
+pwd
+--> /somewhere/else
+popd
+pwd
+--> /here
+```
+
+
+## lsof
+list open files with processes
+
+
+## tr
+change set of character with another one
+
+```
+echo "hello" | tr "[a-z]" "[A-Z]"
+echo "un deux trois" | tr " " "\n"
+echo "un deux trois" | tr " " "\n" | tr "\n" " "
+```
