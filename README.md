@@ -386,3 +386,38 @@ echo "hello" | tr "[a-z]" "[A-Z]"
 echo "un deux trois" | tr " " "\n"
 echo "un deux trois" | tr " " "\n" | tr "\n" " "
 ```
+
+
+## tee
+sends standard input to standard output and to log file
+
+```
+ls | tee log.txt
+```
+
+
+## sleep
+Wait given amount of time, understands time quantifiers (s, m, h)
+
+```
+sleep 3m; echo "wait a little before starting command"
+```
+
+## at
+run commands read on stdin at given time
+
+```
+echo your_command.sh | at 19:00
+```
+
+## cron
+Used to execute schedule commands
+
+You can define the period of execution of your command with a fine granularity (every five minutes, every third day of each month, ...)
+
+```
+crontab -l # list schedule commands
+crontab -e # edit list of schedule commands
+```
+Google / http://www.adminschoice.com/crontab-quick-reference
+
