@@ -1,58 +1,95 @@
 # cli
 presentation for command line interface tools for linux/unix
+
 ## cd
+
 ### Go back to previous directory
 ```
 cd -
 ```
-### Go to home directory 
+
+### Go to home directory
 ```
 cd
 # or
 cd ~
 ```
 
+### Go to someone else home directory
+```
+cd
+# or
+cd ~toto
+```
+
 ## ls
+
 ### size in human readable form
 ```ls -lh```
+
 ### sort by timestamp, latest file at the top
 ```ls -lt```
+
 ### reverse order
 ```ls -lrt```
 
 ## head
 get the 10 first lines of a file (or stdin)
+
 ### specify number of lines
 ```
 head -5
 head -n 5
 ```
 
+### to a specific line
+```
+head -n +5
+```
+
 ## tail
 get the 10 last lines of a file (or stdin)
+
 ### specify number of lines
 ```
 tail -5
 tail -n 5
 ```
+
+### from a specific line
+```
+tail -n +5
+```
+
 ### Monitor a file on live
 ```tail -f <file>```
 
-Particulary useful for log files
+Particulary useful for non-rolling log files
+
+Be aware -f file follow the inode and not the file.
+
+```tail -F <file>```
+
+Particulary useful for rolling log files
+
 
 ## basename
 returns filename of path provided in argument
 
-```basename /path/to/foo
-foo```
+```
+basename /path/to/foo
+--> foo
+```
 
 pathname does not have to be a path to a valid file
 
 ## dirname
 returns folder of given pathname
 
-```dirname /path/to/foo
-/path/to```
+```
+dirname /path/to/foo
+--> /path/to
+```
 
 pathname does not have to be a path to a valid file
 
@@ -252,7 +289,7 @@ Those shortcuts can be used in many programs (which uses readline library)
 ## watch
 Repeatedly run a command to monitor its output
 
-You can highlight difference with previous output with `-d` flag, 
+You can highlight difference with previous output with `-d` flag,
 
 ```
 watch -dc ls
@@ -266,7 +303,7 @@ use `-h` to get a numan readable size.
 ## du
 Stands for Disk Usage, reports size used by files in current folder and sub-folders
 
-If you are interested in the size of current folder, without the details of all the files use 
+If you are interested in the size of current folder, without the details of all the files use
 ```du -s```
 
 Add `-h` flag to get a human readable size.
@@ -274,8 +311,8 @@ Add `-h` flag to get a human readable size.
 ## man
 Stands for MANual, gives manual page of provided command/function
 
-- use `/pattern` to search forward for a particular pattern 
-- use `?pattern` to search backward for a particular pattern 
+- use `/pattern` to search forward for a particular pattern
+- use `?pattern` to search backward for a particular pattern
 - use `q` to quit
 
 ```
