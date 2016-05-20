@@ -1,0 +1,47 @@
+\subsection{tail}
+
+\begin{frame}[fragile]{tail}
+  \begin{exampleblock}{Get the last 10 lines of a file (or stdin)}
+    \begin{lstlisting}[showstringspaces=false]
+tail
+    \end{lstlisting}
+  \end{exampleblock}
+
+  \pause
+  \begin{exampleblock}{Specify the number of lines}
+    \begin{lstlisting}[showstringspaces=false]
+tail -n 5
+tail -5
+    \end{lstlisting}
+  \end{exampleblock}
+
+  \pause
+  \begin{exampleblock}{from a specific line}
+    \begin{lstlisting}[showstringspaces=false]
+tail -n +5
+    \end{lstlisting}
+  \end{exampleblock}
+\end{frame}
+
+
+\begin{frame}[fragile]{tail}
+  \begin{exampleblock}{Monitor a file on live}
+    \begin{lstlisting}[showstringspaces=false]
+tail -f <file>
+    \end{lstlisting}
+  \end{exampleblock}
+Particulary useful for non-rolling log files
+\pause
+
+Be aware -f file follow the inode and not the file.
+
+  \pause
+  \begin{exampleblock}{Monitor a rolling file on live}
+    \begin{lstlisting}[showstringspaces=false]
+tail -F <file>
+    \end{lstlisting}
+  \end{exampleblock}
+
+
+\end{frame}
+

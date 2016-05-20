@@ -1,0 +1,84 @@
+\subsection{sed}
+
+\begin{frame}[fragile]{sed}
+  \begin{itemize}
+    \item Used to perform automatic edition on an input stream or an existing file
+    \pause
+    \item Stands for Stream EDitor
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{sed}
+  \begin{exampleblock}{Search and Replace}
+    \begin{lstlisting}[showstringspaces=false]
+sed 's/search/replace/g'
+    \end{lstlisting}
+  \end{exampleblock}
+  \pause
+
+  \begin{exampleblock}{Delete line matching pattern}
+    \begin{lstlisting}[showstringspaces=false]
+sed '/pattern on line to delete/d'
+    \end{lstlisting}
+  \end{exampleblock}
+  \pause
+
+  \begin{exampleblock}{Delete line or range of lines}
+    \begin{lstlisting}[showstringspaces=false]
+sed '3d'
+sed '3,5d'
+    \end{lstlisting}
+  \end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{sed}
+If you want to modify an existing files, instead of having sed doing modifications on standard input you can use \emph{-i} flag
+\pause
+  \begin{exampleblock}{Modify file in-place}
+    \begin{lstlisting}[showstringspaces=false]
+sed -i 's/search/replace/g' filename
+sed -i.bak 's/search/replace/g' filename
+    \end{lstlisting}
+  \end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{sed}
+Sed can memorize patterns on the search side to reuse them on the replace side by using escaped parenthesis :
+\pause
+  \begin{exampleblock}{Memorize patterns}
+    \begin{lstlisting}[showstringspaces=false]
+echo "# hello  | sed 's/\(#*\)\(.*\)\$/\1\2 \1/'
+--> # hello #
+    \end{lstlisting}
+  \end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{sed}
+If you have multiple operations to perform you can either pipe them, or put them in a sed script (script.sed, with executable rights)
+\pause
+  \begin{exampleblock}{Sed script}
+    \begin{lstlisting}[showstringspaces=false,basicstyle=\tiny]
+#!/bin/sed -f
+s/#/=/g
+s/^\(=*\)\(.*\)/\1\2 \1/
+    \end{lstlisting}
+  \end{exampleblock}
+
+\pause
+And execute the script on a file
+  \begin{exampleblock}{Execute Script}
+    \begin{lstlisting}[showstringspaces=false]
+script.sed README.md
+    \end{lstlisting}
+  \end{exampleblock}
+\end{frame}
+
+
+\begin{frame}[fragile]{sed}
+\begin{itemize}
+\item\emph{/} delimiter for commands can be replaced with \emph{:,\#\%} (non exhaustive)
+\pause
+
+\item tutorial : http://www.grymoire.com/Unix/Sed.html
+\end{itemize}
+\end{frame}

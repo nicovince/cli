@@ -1,0 +1,36 @@
+\subsection{grep}
+\begin{frame}[fragile]{grep}
+\begin{itemize}
+  \item \emph{grep} stands for Get Regular Expression
+  \pause
+  \item It outputs the line(s) from stdin or specified files matching a given pattern (regular expression, aka regexp)
+  \pause
+  \item Use \emph{--color=auto} to highlight your matches
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{grep}
+  \begin{exampleblock}{Basic usage}
+    \begin{lstlisting}[showstringspaces=false]
+grep ring text
+grep "\<ring\>" text
+grep "\<Ring\>" text
+grep -w Ring text
+grep "\<ring\>" text -i
+    \end{lstlisting}
+  \end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{grep options}
+\begin{itemize}
+  \item \emph{-l} if you are only interested in the filenames for which there is a match
+  \pause \item \emph{-L} if you are only interested in the filenames for which there is no match
+  \pause \item \emph{-H} to force grep to display filename
+  \pause \item \emph{-h} to prevent grep from displaying filename
+  \pause \item \emph{-c} to count number of lines matching (not number of match)
+  \pause \item \emph{-o} display only the matching part \emph{echo -e "foo bar\\nfoooo" | grep fo* -o}
+  \pause \item \emph{-v} display lines which do not match the pattern
+  \pause \item \emph{-A 2} display two lines of context after the match
+  \pause \item \emph{-B 2} display two lines of context before the match
+\end{itemize}
+\end{frame}

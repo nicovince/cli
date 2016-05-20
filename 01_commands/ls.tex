@@ -1,0 +1,37 @@
+\subsection{ls}
+
+\begin{frame}[fragile]{ls}
+  \begin{exampleblock}{size in human readable form}
+    \begin{lstlisting}[showstringspaces=false, basicstyle=\tiny]
+> ls -lh
+drwxrwxr-x 2 nicolas nicolas 4,0K mai   20 20:43 01_commands
+drwxrwxr-x 2 nicolas nicolas 4,0K mai   20 20:11 img
+-rw-r--r-- 1 nicolas nicolas 2,9K mai   20 20:26 main.tex
+-rw-r--r-- 1 nicolas nicolas 2,9K mai   20 20:11 main.tex~
+-rw-r--r-- 1 nicolas nicolas  283 mai   20 20:23 Makefile
+-rw-r--r-- 1 nicolas nicolas  322 mai   20 20:21 Makefile~
+drwxrwxr-x 2 nicolas nicolas 4,0K mai   20 20:39 out
+-rw-rw-r-- 1 nicolas nicolas  10K mai   20 19:32 README.md
+-rwxrwxr-x 1 nicolas nicolas   47 mai   20 19:32 script.sed
+-rw-rw-r-- 1 nicolas nicolas  371 mai   20 19:32 text
+    \end{lstlisting}
+  \end{exampleblock}
+\end{frame}
+
+
+\begin{frame}[fragile]{ls}
+  \begin{exampleblock}{Sort by timestamp, most recent file first}
+    \begin{lstlisting}[showstringspaces=false,basicstyle=\tiny]
+> ls -t
+01_commands  out  main.tex  Makefile  Makefile~  img  
+main.tex~  README.md  script.sed  text
+    \end{lstlisting}
+  \end{exampleblock}
+  \pause
+
+  \begin{exampleblock}{reverse order}
+    \begin{lstlisting}[showstringspaces=false]
+ls -rt
+    \end{lstlisting}
+  \end{exampleblock}
+\end{frame}
