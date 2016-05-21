@@ -1,0 +1,25 @@
+\subsection{bc}
+
+\begin{frame}[fragile]{bc}
+  \begin{itemize}
+    \pause \item Command line calculator
+    \pause \item Respect operator precedence
+    \pause \item No built-in arithmetic functions
+    \pause \item Functions can be defined
+    \pause \item Can read from stdin
+    \pause \item Can be used as a script (\texttt{\#!/usr/bin/bc})
+    \pause \item Needs \texttt{-l} flag to perform float operations
+  \end{itemize}
+\end{frame}
+  
+
+\begin{frame}[fragile]{bc}
+  \begin{exampleblock}{}
+    \begin{lstlisting}[showstringspaces=false]
+> echo "5+5*3" | bc
+20
+> echo "(5+5)*3" | bc
+30
+    \end{lstlisting}
+  \end{exampleblock}
+\end{frame}

@@ -1,11 +1,11 @@
 \subsection{grep}
 \begin{frame}[fragile]{grep}
 \begin{itemize}
-  \item \emph{grep} stands for Get Regular Expression
+  \item \texttt{grep} stands for Get Regular Expression
   \pause
   \item It outputs the line(s) from stdin or specified files matching a given pattern (regular expression, aka regexp)
   \pause
-  \item Use \emph{--color=auto} to highlight your matches
+  \item Use \texttt{--color=auto} to highlight your matches
 \end{itemize}
 \end{frame}
 
@@ -23,14 +23,14 @@ grep "\<ring\>" text -i
 
 \begin{frame}[fragile]{grep options}
 \begin{itemize}
-  \item \emph{-l} if you are only interested in the filenames for which there is a match
-  \pause \item \emph{-L} if you are only interested in the filenames for which there is no match
-  \pause \item \emph{-H} to force grep to display filename
-  \pause \item \emph{-h} to prevent grep from displaying filename
-  \pause \item \emph{-c} to count number of lines matching (not number of match)
-  \pause \item \emph{-o} display only the matching part \emph{echo -e "foo bar\\nfoooo" | grep fo* -o}
-  \pause \item \emph{-v} display lines which do not match the pattern
-  \pause \item \emph{-A 2} display two lines of context after the match
-  \pause \item \emph{-B 2} display two lines of context before the match
+  \item \texttt{-l} if you are only interested in the filenames for which there is a match
+  \pause \item \texttt{-L} if you are only interested in the filenames for which there is no match
+  \pause \item \texttt{-H} to force grep to display filename
+  \pause \item \texttt{-h} to prevent grep from displaying filename
+  \pause \item \texttt{-c} to count number of lines matching (not number of match)
+  \pause \item \texttt{-o} display only the matching part \emph{echo -e "foo bar\\nfoooo" | grep fo* -o}
+  \pause \item \texttt{-v} display lines which do not match the pattern
+  \pause \item \texttt{-A 2} display two lines of context after the match
+  \pause \item \texttt{-B 2} display two lines of context before the match
 \end{itemize}
 \end{frame}

@@ -1,0 +1,23 @@
+\subsection{xargs}
+
+\begin{frame}[fragile]{xargs}
+  \begin{itemize}
+    \pause \item Transform standard input to arguments
+  \end{itemize}
+  \pause
+
+  \begin{exampleblock}{Remove file containing a pattern}
+    \begin{lstlisting}[showstringspaces=false,basicstyle=\tiny]
+grep "pattern" -l * | xargs rm -i
+    \end{lstlisting}
+  \end{exampleblock}
+\pause
+By default, arguments are pushed at the end of the command, you may want to insert them in the middle :
+\pause
+
+  \begin{exampleblock}{Place argument}
+    \begin{lstlisting}[showstringspaces=false,basicstyle=\tiny]
+grep "pattern" -l * | xargs -I{} cp {} destination_folder
+    \end{lstlisting}
+  \end{exampleblock}
+\end{frame}

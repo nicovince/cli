@@ -1,0 +1,43 @@
+\subsection{screen}
+
+\begin{frame}{Screen}
+\begin{itemize}
+\item Terminal emulator
+\pause \item Allows user to reattach to a session opened previously
+\pause \item Keeps running if you close your putty/terminal
+\pause \item Resilient to broken connection
+\pause \item Not resilient to power outage/reboot
+\pause \item Multiple screen session can be running on the same computer
+\pause \item List available session with \texttt{-l} flag
+\pause \item Screen session can be named at creation with \texttt{-S} flag
+\pause \item Use \texttt{-RD} to create or reattach to an existing session
+\end{itemize}
+\end{frame}
+%## screen
+%Terminal emulator, allows user to open a session on a computer, and reattach to that same session remotely
+%screen is resilient to broken connection, logout from main session. Unfortunately it is not yet resilient to power outage/reboot.
+%
+%To reattach to a screen session, it must be detached first `-d` flag, and it is reattached with the `-r` flag. If no session exists, it will fail. Using `-RD` flags will starts a screen session if none exists.
+%```screen -RD```
+%
+%You can have multiple screen session running, use `screen -ls` to list them, and specify which session you want to attach to after the reattach flag (`-R` or `-r`).
+%
+%You can specify the name of a screen session with `-S flag`
+%
+%```screen -S unicorn```
+
+
+\begin{frame}{Navigation inside screen}
+\begin{itemize}
+  \item You can send commands to screen to create tabs, navigate, scroll
+  \pause \item All screen commands starts with \texttt{ctrl-a} followed by a letter
+  \pause \item \texttt{ctrl-a d} : detach from your current screen session
+  \pause \item \texttt{ctrl-a c} : Creates a new tab with a shell
+  \pause \item \texttt{ctrl-a <space>} : go to next tab
+  \pause \item \texttt{ctrl-a "} : display list of available tabs
+  \pause \item \texttt{ctrl-a A} : prompt to rename a tab
+  \pause \item \texttt{ctrl-a <escape>} : switch to history/scroll mode
+  \pause \item Type \texttt{:} to quit scroll mode
+\end{itemize}
+\end{frame}
+

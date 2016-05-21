@@ -1,0 +1,19 @@
+\subsection{awk}
+
+\begin{frame}[fragile]{awk}
+Used to manipulate colums from a file or stadard input ad print it on standard output.
+  \pause
+  \begin{exampleblock}{Print second column}
+    \begin{lstlisting}[showstringspaces=false]
+> echo -e "1 2 3\n4 5 6" | gawk '{print $2}'
+2
+5
+    \end{lstlisting}
+  \end{exampleblock}
+\pause
+\emph{\$0} stands for all columns
+\pause
+
+more infos : https://linuxconfig.org/learning-linux-commands-awk
+\end{frame}
+

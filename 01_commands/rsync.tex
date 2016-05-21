@@ -1,0 +1,16 @@
+\subsection{rsync}
+
+\begin{frame}[fragile]{rsync}
+  \begin{itemize}
+    \pause \item Remote SYNChronisation
+    \pause \item Synchronize two directorires
+    \pause \item Analyse difference between the two directories
+  \end{itemize}
+  \pause
+
+  \begin{exampleblock}{Basic usage}
+    \begin{lstlisting}[showstringspaces=false,basicstyle=\tiny]
+rsync -avz src_directory user@remote:/target/dir
+    \end{lstlisting}
+  \end{exampleblock}
+\end{frame}
