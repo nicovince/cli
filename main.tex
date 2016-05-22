@@ -13,11 +13,11 @@
 
 \title[Command Line Interface]{Command Line Interface}
 \author{Nicolas VINCENT}
-\date{Today}
+\date{May 31, 2016}
 
 \newcommand{\noheader}[0]{
   \setbeamertemplate{headline}{}
-  \addtobeamertemplate{frametitle}{\vspace*{-2.6\baselineskip}}{}
+  \addtobeamertemplate{frametitle}{\vspace*{-3.9\baselineskip}}{}
   }
 
 \newenvironment{framewoheader}[1][]
@@ -52,29 +52,9 @@
   %% \setbeamercovered{dynamic}
   \begin{framewoheader}
     \frametitle{Plan}
-    \begin{columns}[t]
-      \column{5cm}
-        \tableofcontents[sections={1-3},currentsection,currentsubsection]
-      \column{5cm}
-        \tableofcontents[sections={4-7},currentsection,currentsubsection]
-    \end{columns}
-  \end{framewoheader}
-  %% \setbeamercovered{invisible}
-}
-
-\AtBeginSubsection[]
-{
-  %% \setbeamercovered{dynamic}
-  \begin{framewoheader}
-    \frametitle{Plan}
-    \begin{columns}[t]
-      \column{4cm}
-        \tableofcontents[sections={1-2},currentsection,currentsubsection]
-      \column{4cm}
-        \tableofcontents[sections={3-4},currentsection,currentsubsection]
-      \column{4cm}
-        \tableofcontents[sections={5},currentsection,currentsubsection]
-    \end{columns}
+    \setcounter{tocdepth}{1}
+    \tableofcontents[sections={1-7},currentsection]
+    \setcounter{tocdepth}{3}
   \end{framewoheader}
   %% \setbeamercovered{invisible}
 }
@@ -91,7 +71,7 @@
 
 \begin{framewoheader}
   \begin{figure}[!h]
-    %\includegraphics[height=2cm]{img/python-logo-master-v3-TM.png}
+    \includegraphics[height=2cm]{img/tuxterminal.png}
     \includegraphics[height=1.5cm]{img/sogeti-hightech-logo.jpg}
   \end{figure}
   \titlepage
@@ -99,16 +79,15 @@
 
 \begin{framewoheader}
   \frametitle{Plan}
-  \begin{columns}[t]
-    \column{4cm}
-      \tableofcontents[sections={1-2}]
-    \column{4cm}
-      \tableofcontents[sections={3-4}]
-    \column{4cm}
-      \tableofcontents[sections={5}]
-  \end{columns}
+  \setcounter{tocdepth}{1}
+  \tableofcontents[sections={1-7}]
+  \setcounter{tocdepth}{3}
 \end{framewoheader}
 
-\subimport{01_commands/}{all.tex}
+\subimport{01_general/}{all.tex}
+\subimport{02_stream/}{all.tex}
+\subimport{03_interactive/}{all.tex}
+\subimport{04_monitoring_and_admin/}{all.tex}
+\subimport{05_unclassified/}{all.tex}
 
 \end{document}

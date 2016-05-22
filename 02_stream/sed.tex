@@ -47,7 +47,7 @@ Sed can memorize patterns on the search side to reuse them on the replace side b
 \pause
   \begin{exampleblock}{Memorize patterns}
     \begin{lstlisting}[showstringspaces=false,basicstyle=\tiny]
-echo "# hello  | sed 's/\(#*\)\(.*\)\$/\1\2 \1/'
+echo "# hello"  | sed 's/\(#*\)\(.*\)$/\1\2 \1/'
 --> # hello #
     \end{lstlisting}
   \end{exampleblock}
