@@ -10,21 +10,21 @@
 
 \begin{frame}[fragile]{sed}
   \begin{exampleblock}{Search and Replace}
-    \begin{lstlisting}[showstringspaces=false]
+    \begin{lstlisting}[showstringspaces=false,basicstyle=\tiny]
 sed 's/search/replace/g'
     \end{lstlisting}
   \end{exampleblock}
   \pause
 
   \begin{exampleblock}{Delete line matching pattern}
-    \begin{lstlisting}[showstringspaces=false]
+    \begin{lstlisting}[showstringspaces=false,basicstyle=\tiny]
 sed '/pattern on line to delete/d'
     \end{lstlisting}
   \end{exampleblock}
   \pause
 
   \begin{exampleblock}{Delete line or range of lines}
-    \begin{lstlisting}[showstringspaces=false]
+    \begin{lstlisting}[showstringspaces=false,basicstyle=\tiny]
 sed '3d'
 sed '3,5d'
     \end{lstlisting}
@@ -35,7 +35,7 @@ sed '3,5d'
 If you want to modify an existing files, instead of having sed doing modifications on standard input you can use \emph{-i} flag
 \pause
   \begin{exampleblock}{Modify file in-place}
-    \begin{lstlisting}[showstringspaces=false]
+    \begin{lstlisting}[showstringspaces=false,basicstyle=\tiny]
 sed -i 's/search/replace/g' filename
 sed -i.bak 's/search/replace/g' filename
     \end{lstlisting}
@@ -46,7 +46,7 @@ sed -i.bak 's/search/replace/g' filename
 Sed can memorize patterns on the search side to reuse them on the replace side by using escaped parenthesis :
 \pause
   \begin{exampleblock}{Memorize patterns}
-    \begin{lstlisting}[showstringspaces=false]
+    \begin{lstlisting}[showstringspaces=false,basicstyle=\tiny]
 echo "# hello  | sed 's/\(#*\)\(.*\)\$/\1\2 \1/'
 --> # hello #
     \end{lstlisting}
@@ -67,7 +67,7 @@ s/^\(=*\)\(.*\)/\1\2 \1/
 \pause
 And execute the script on a file
   \begin{exampleblock}{Execute Script}
-    \begin{lstlisting}[showstringspaces=false]
+    \begin{lstlisting}[showstringspaces=false,basicstyle=\tiny]
 script.sed README.md
     \end{lstlisting}
   \end{exampleblock}
@@ -75,10 +75,10 @@ script.sed README.md
 
 
 \begin{frame}[fragile]{sed}
-\begin{itemize}
-\item\emph{/} delimiter for commands can be replaced with \emph{:,\#\%} (non exhaustive)
-\pause
-
-\item tutorial : http://www.grymoire.com/Unix/Sed.html
-\end{itemize}
+  \begin{itemize}
+    \item\emph{/} delimiter for commands can be replaced with \emph{:,\#\%} (non exhaustive)
+    \pause
+    
+    \item tutorial : http://www.grymoire.com/Unix/Sed.html
+  \end{itemize}
 \end{frame}

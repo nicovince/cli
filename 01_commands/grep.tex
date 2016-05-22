@@ -22,15 +22,25 @@ grep "\<ring\>" text -i
 \end{frame}
 
 \begin{frame}[fragile]{grep options}
-\begin{itemize}
-  \item \texttt{-l} if you are only interested in the filenames for which there is a match
-  \pause \item \texttt{-L} if you are only interested in the filenames for which there is no match
-  \pause \item \texttt{-H} to force grep to display filename
-  \pause \item \texttt{-h} to prevent grep from displaying filename
-  \pause \item \texttt{-c} to count number of lines matching (not number of match)
-  \pause \item \texttt{-o} display only the matching part \emph{echo -e "foo bar\\nfoooo" | grep fo* -o}
-  \pause \item \texttt{-v} display lines which do not match the pattern
-  \pause \item \texttt{-A 2} display two lines of context after the match
-  \pause \item \texttt{-B 2} display two lines of context before the match
-\end{itemize}
+  \begin{itemize}
+    \item \texttt{-l} if you are only interested in the filenames for which there is a match
+    \pause \item \texttt{-L} if you are only interested in the filenames for which there is no match
+    \pause \item \texttt{-H} to force grep to display filename
+    \pause \item \texttt{-h} to prevent grep from displaying filename
+    \pause \item \texttt{-c} to count number of lines matching (not number of match)
+    \pause \item \texttt{-v} display lines which do not match the pattern
+    \pause \item \texttt{-A 2} display two lines of context after the match
+    \pause \item \texttt{-B 2} display two lines of context before the match
+    \pause \item \texttt{-o} display only the matching part 
+  \end{itemize}
 \end{frame}
+\begin{frame}[fragile]{grep}
+  \begin{exampleblock}{Basic usage}
+    \begin{lstlisting}[showstringspaces=false]
+> echo -e "foo bar\nfoooo" | grep fo* -o
+foo
+foooo
+    \end{lstlisting}
+  \end{exampleblock}
+\end{frame}
+

@@ -2,14 +2,14 @@
 
 \begin{frame}[fragile]{tail}
   \begin{exampleblock}{Get the last 10 lines of a file (or stdin)}
-    \begin{lstlisting}[showstringspaces=false]
+    \begin{lstlisting}[showstringspaces=false,basicstyle=\tiny]
 tail
     \end{lstlisting}
   \end{exampleblock}
 
   \pause
   \begin{exampleblock}{Specify the number of lines}
-    \begin{lstlisting}[showstringspaces=false]
+    \begin{lstlisting}[showstringspaces=false,basicstyle=\tiny]
 tail -n 5
 tail -5
     \end{lstlisting}
@@ -17,7 +17,7 @@ tail -5
 
   \pause
   \begin{exampleblock}{from a specific line}
-    \begin{lstlisting}[showstringspaces=false]
+    \begin{lstlisting}[showstringspaces=false,basicstyle=\tiny]
 tail -n +5
     \end{lstlisting}
   \end{exampleblock}
@@ -26,7 +26,7 @@ tail -n +5
 
 \begin{frame}[fragile]{tail}
   \begin{exampleblock}{Monitor a file on live}
-    \begin{lstlisting}[showstringspaces=false]
+    \begin{lstlisting}[showstringspaces=false,basicstyle=\tiny]
 tail -f <file>
     \end{lstlisting}
   \end{exampleblock}
@@ -37,7 +37,7 @@ Be aware -f file follow the inode and not the file.
 
   \pause
   \begin{exampleblock}{Monitor a rolling file on live}
-    \begin{lstlisting}[showstringspaces=false]
+    \begin{lstlisting}[showstringspaces=false,basicstyle=\tiny]
 tail -F <file>
     \end{lstlisting}
   \end{exampleblock}

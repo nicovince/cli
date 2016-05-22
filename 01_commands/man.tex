@@ -1,0 +1,31 @@
+\subsection{man}
+
+\begin{frame}[fragile]{man}
+  \begin{itemize}
+    \pause \item Stands for MANual
+    \pause \item Gives manual page of provided command/function
+    \pause \item Use \texttt{/pattern} to search forward a pattern
+    \pause \item Use \texttt{?pattern} to search backward a pattern
+    \pause \item Use \texttt{q} to quit
+  \end{itemize}
+  \pause
+
+  \begin{exampleblock}{Example}
+    \begin{lstlisting}[showstringspaces=false,basicstyle=\tiny]
+> man man
+MAN(1)    Manual pager utils     MAN(1)
+
+NAME
+       man - an interface to the on-line reference manuals
+    \end{lstlisting}
+  \end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{man}
+  \begin{exampleblock}{Example}
+    \begin{lstlisting}[showstringspaces=false,language=]
+> man woman
+No manual entry for woman
+    \end{lstlisting}
+  \end{exampleblock}
+\end{frame}

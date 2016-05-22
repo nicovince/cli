@@ -1,0 +1,22 @@
+\subsection{tr}
+
+\begin{frame}[fragile]{tr}
+  \begin{itemize}
+    \pause \item TRanslate
+    \pause \item Change set of character with another set
+  \end{itemize}
+  \pause
+
+  \begin{exampleblock}{Basic usage}
+    \begin{lstlisting}[showstringspaces=false,basicstyle=\tiny]
+> echo "hello" | tr "[a-z]" "[A-Z]"
+HELLO
+> echo "un deux trois" | tr " " "\n"
+un
+deux
+trois
+> echo "un deux trois" | tr " " "\n" | tr "\n" " "
+un deux trois
+    \end{lstlisting}
+  \end{exampleblock}
+\end{frame}

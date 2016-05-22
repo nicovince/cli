@@ -1,0 +1,23 @@
+\subsection{df}
+
+\begin{frame}[fragile]{df}
+  \begin{itemize}
+    \pause \item Reports disk usage of partitions mounted
+    \pause \item Useful to realize your / is full
+    \pause \item Use \texttt{-h} to get human readable size
+  \end{itemize}
+  \pause
+  \begin{exampleblock}{Basic usage}
+    \begin{lstlisting}[showstringspaces=false]
+df -h
+Filesystem      Size  Used Avail Use% Mounted on
+udev            352M     0  352M   0% /dev
+tmpfs            75M  4,0M   71M   6% /run
+/dev/sda1       7,1G  5,9G  783M  89% /
+tmpfs           371M  132K  371M   1% /dev/shm
+tmpfs           5,0M  4,0K  5,0M   1% /run/lock
+tmpfs           371M     0  371M   0% /sys/fs/cgroup
+tmpfs            75M  104K   74M   1% /run/user/1000
+    \end{lstlisting}
+  \end{exampleblock}
+\end{frame}

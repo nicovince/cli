@@ -1,0 +1,38 @@
+\subsection{diff}
+
+\begin{frame}[fragile]{diff}
+  \begin{itemize}
+    \pause \item Perform diff between files
+    \pause \item \texttt{-U 2} for unified diff
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{diff}
+  \begin{exampleblock}{Standard diff}
+    \begin{lstlisting}[showstringspaces=false,basicstyle=\tiny]
+> diff main.tex main.tex~
+88c88
+< \lstset{language=Bash}
+---
+> \lstset{language=Python}
+    \end{lstlisting}
+  \end{exampleblock}
+  \pause
+\end{frame}
+
+\begin{frame}[fragile]{diff}
+  \begin{exampleblock}{Unified diff}
+    \begin{lstlisting}[showstringspaces=false,basicstyle=\tiny]
+> diff -U 2 main.tex main.tex~
+--- main.tex2016-05-21 13:08:10.400213527 +0200
++++ main.tex~   2016-05-21 13:06:20.428468765 +0200
+@@ -86,5 +86,5 @@
+ \begin{document}
+ 
+-\lstset{language=Bash}
++\lstset{language=Python}
+ 
+ \begin{framewoheader}
+    \end{lstlisting}
+  \end{exampleblock}
+\end{frame}

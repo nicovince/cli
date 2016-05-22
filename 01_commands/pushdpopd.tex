@@ -1,0 +1,31 @@
+\subsection{pushd/popd}
+
+\begin{frame}[fragile]{pushd/popd}
+  \begin{itemize}
+    \pause \item Push/pop directories into/from a stack for later use
+    \pause \item \texttt{pushd} : push argument into stack
+    \pause \item \texttt{popd} : go to last pushed directory
+  \end{itemize}
+  \pause
+\end{frame}
+
+\begin{frame}[fragile]{pushd/popd}
+  \begin{exampleblock}{Basic usage}
+    \begin{lstlisting}[showstringspaces=false,basicstyle=\tiny]
+> pwd
+/here
+> pushd .
+> cd /somewhere/else
+> pushd .
+> cd /another/place
+> popd
+> pwd
+/somewhere/else
+> popd
+> pwd
+/here
+    \end{lstlisting}
+  \end{exampleblock}
+\end{frame}
+
+

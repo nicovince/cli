@@ -1,0 +1,28 @@
+\subsection{tar}
+
+\begin{frame}[fragile]{tar}
+  \begin{itemize}
+    \pause \item Stands for Tape ARchive (A little while ago, main storage support were tapes)
+    \pause \item Tapes are still used for backup solutions
+    \pause \item No compression by default
+    \pause \item Use \texttt{cf} option to create archive
+    \pause \item Use \texttt{czf} option to create archive compressed with gzip (.tar.gz)
+    \pause \item Use \texttt{cjf} option to create archive compressed with bz2 (.tar.bz2)
+    \pause \item Replace \texttt{c} with \texttt{x} to extract archive
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{tar}
+  \begin{exampleblock}{Example without compression}
+    \begin{lstlisting}[showstringspaces=false]
+tar cf archive.tar <list of files>
+    \end{lstlisting}
+  \end{exampleblock}
+  \pause
+
+  \begin{exampleblock}{gzip compression}
+    \begin{lstlisting}[showstringspaces=false]
+tar czf archive.tar.gz <list of files>
+    \end{lstlisting}
+  \end{exampleblock}
+\end{frame}

@@ -1,0 +1,29 @@
+\subsection{du}
+
+\begin{frame}[fragile]{du}
+  \begin{itemize}
+    \pause \item Stands for Disk Usage
+    \pause \item Reports size used by file i current folder ad sub-folders
+    \pause \item Use \texttt{-s} for size used by current folder
+    \pause \item Use \texttt{-h} human readable size
+  \end{itemize}
+  \pause
+
+  \begin{exampleblock}{Example}
+    \begin{lstlisting}[showstringspaces=false]
+> du | head -3
+108./img
+168./01_commands
+8./.git/info
+    \end{lstlisting}
+  \end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{du}
+  \begin{exampleblock}{Example}
+    \begin{lstlisting}[showstringspaces=false]
+> du -hs
+1,9M .
+    \end{lstlisting}
+  \end{exampleblock}
+\end{frame}

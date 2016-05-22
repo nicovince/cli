@@ -1,0 +1,16 @@
+\subsection{watch}
+
+\begin{frame}[fragile]{watch}
+  \begin{itemize}
+    \pause \item Repeatedly runs a command to monitor its output
+    \pause \item Highlight difference with previous output with \texttt{-d} flag
+    \pause \item Keep differences highlighted over time with \texttt{-c} flag
+  \end{itemize}
+  \pause
+
+  \begin{exampleblock}{Example}
+    \begin{lstlisting}[showstringspaces=false]
+watch -dc ls
+    \end{lstlisting}
+  \end{exampleblock}
+\end{frame}
