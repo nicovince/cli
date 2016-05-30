@@ -1,0 +1,18 @@
+\subsection{patch}
+
+\begin{frame}[fragile]{patch}
+  \begin{itemize}
+    \pause \item Apply patch to file(s)
+    \pause \item Patch file can be generated from the output of diff
+    \pause \item \texttt{--dry-run} to see if patch is applied without error
+    \pause \item \texttt{-R} to apply patch in reverse
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{patch}
+  \begin{exampleblock}{Applying patch}
+    \begin{lstlisting}[showstringspaces=false,basicstyle=\tiny]
+patch -p0 < patch.file
+    \end{lstlisting}
+  \end{exampleblock}
+\end{frame}

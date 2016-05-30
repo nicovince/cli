@@ -3,7 +3,7 @@
 \begin{frame}[fragile]{uniq}
 \begin{itemize}
 \item Suppress identical adjacent lines.
-\pause \item Often used after a \emph{sort} operation.
+  \pause \item Often used after a \emph{sort} operation. (\emph{sort -u} would do the job)
 \end{itemize}
   \pause
   \begin{exampleblock}{}
@@ -14,3 +14,13 @@ a
   \end{exampleblock}
 \end{frame}
 
+\begin{frame}[fragile]{uniq}
+  \begin{exampleblock}{}
+    \begin{lstlisting}[showstringspaces=false]
+> echo -e "a\na\nb\na" | uniq
+a
+b
+a
+    \end{lstlisting}
+  \end{exampleblock}
+\end{frame}

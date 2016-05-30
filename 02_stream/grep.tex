@@ -10,16 +10,74 @@
 \end{frame}
 
 \begin{frame}[fragile]{grep}
-  \begin{exampleblock}{Basic usage}
-    \begin{lstlisting}[showstringspaces=false]
-grep ring text
-grep "\<ring\>" text
-grep "\<Ring\>" text
-grep -w Ring text
-grep "\<ring\>" text -i
+  \begin{exampleblock}{Basic usage - text sample}
+    \begin{lstlisting}[showstringspaces=false,basicstyle=\tiny]
+> cat text
+Three Rings for the Elven-kings under the sky,
+Seven for the Dwarf-lords in their halls of stone,
+Nine for Mortal Men doomed to die,
+One for the Dark Lord on his dark throne
+In the Land of Mordor where the Shadows lie.
+One Ring to rule them all, One Ring to find them,
+One Ring to bring them all and in the darkness bind them
+In the Land of Mordor where the Shadows lie.
     \end{lstlisting}
   \end{exampleblock}
 \end{frame}
+
+\begin{frame}[fragile]{grep}
+  \begin{exampleblock}{Basic usage - search ring}
+    \begin{lstlisting}[showstringspaces=false,basicstyle=\tiny]
+> grep ring text
+One Ring to bring them all and in the darkness bind them
+    \end{lstlisting}
+  \end{exampleblock}
+\end{frame}
+
+
+\begin{frame}[fragile]{grep}
+  \begin{exampleblock}{Basic usage - search ring word}
+    \begin{lstlisting}[showstringspaces=false,basicstyle=\tiny]
+> grep "\<ring\>" text
+    \end{lstlisting}
+  \end{exampleblock}
+  \pause
+  Try Ring
+\end{frame}
+
+
+\begin{frame}[fragile]{grep}
+  \begin{exampleblock}{Basic usage - search ring}
+    \begin{lstlisting}[showstringspaces=false,basicstyle=\tiny]
+> grep "\<Ring\>" text
+One Ring to rule them all, One Ring to find them,
+One Ring to bring them all and in the darkness bind them
+    \end{lstlisting}
+  \end{exampleblock}
+\end{frame}
+
+
+\begin{frame}[fragile]{grep}
+  \begin{exampleblock}{Basic usage - search ring}
+    \begin{lstlisting}[showstringspaces=false,basicstyle=\tiny]
+> grep -w Ring text
+One Ring to rule them all, One Ring to find them,
+One Ring to bring them all and in the darkness bind them
+    \end{lstlisting}
+  \end{exampleblock}
+\end{frame}
+
+
+\begin{frame}[fragile]{grep}
+  \begin{exampleblock}{Basic usage - search ring}
+    \begin{lstlisting}[showstringspaces=false,basicstyle=\tiny]
+> grep "\<ring\>" text -i
+One Ring to rule them all, One Ring to find them,
+One Ring to bring them all and in the darkness bind them
+    \end{lstlisting}
+  \end{exampleblock}
+\end{frame}
+
 
 \begin{frame}[fragile]{grep options}
   \begin{itemize}
@@ -34,6 +92,8 @@ grep "\<ring\>" text -i
     \pause \item \texttt{-o} display only the matching part 
   \end{itemize}
 \end{frame}
+
+
 \begin{frame}[fragile]{grep}
   \begin{exampleblock}{Basic usage}
     \begin{lstlisting}[showstringspaces=false]
