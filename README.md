@@ -4,7 +4,7 @@ presentation for command line interface tools for linux/unix
 ## cd
 
 ### Go back to previous directory
-```
+```bash
 cd -
 ```
 
@@ -17,21 +17,19 @@ cd ~
 
 ### Go to someone else home directory
 ```
-cd
-# or
 cd ~toto
 ```
 
 ## ls
 
 ### size in human readable form
-```ls -lh```
+`ls -lh`
 
 ### sort by timestamp, latest file at the top
-```ls -lt```
+`ls -lt`
 
 ### reverse order
-```ls -lrt```
+`ls -lrt`
 
 ## head
 get the 10 first lines of a file (or stdin)
@@ -61,14 +59,18 @@ tail -n 5
 tail -n +5
 ```
 
-### Monitor a file on live
-```tail -f <file>```
+### Monitor a file in live
+```bash
+tail -f <file>
+```
 
 Particulary useful for non-rolling log files
 
 Be aware -f file follow the inode and not the file.
 
-```tail -F <file>```
+```bash
+tail -F <file>
+```
 
 Particulary useful for rolling log files
 
@@ -76,7 +78,7 @@ Particulary useful for rolling log files
 ## basename
 returns filename of path provided in argument
 
-```
+```bash
 basename /path/to/foo
 --> foo
 ```
@@ -99,24 +101,28 @@ pathname does not have to be a path to a valid file
 
 Used to perform automatic edititon on an input stream or an existing file :
 - search and replace
-```sed 's/search/replace/g'```
+`sed 's/search/replace/g'`
 - delete lines matching a pattern
-```sed '/pattern on line to delete/d'```
+`sed '/pattern on line to delete/d'`
 - delete line or range of lines
-```sed '3d'
-sed '3,5d'```
-
-If you want to modify an existing files, instead of having sed doing modifications on standard input you can use ```-i``` flag
+```bash
+sed '3d'
+sed '3,5d'
 ```
+
+If you want to modify an existing files, instead of having sed doing modifications on standard output you can use `-i` flag
+```bash
 sed -i 's/search/replace/g' filename
 sed -i.bak 's/search/replace/g' filename
 ```
 
 Sed can memorize patterns on the search side to reuse them on the replace side by using escaped parenthesis :
-```head README.md  | sed 's/\(#*\)\(.*\)$/\1\2\1/'```
+```bash
+head README.md  | sed 's/\(#*\)\(.*\)$/\1\2\1/'
+```
 
 If you have multiple operations to perform you can either pipe them, or put them in a sed script (script.sed, with executable rights)
-```
+```bash
 #!/bin/sed -f
 s/#/=/g
 s/^\(=*\)\(.*\)/\1\2 \1/
@@ -124,9 +130,11 @@ s/^\(=*\)\(.*\)/\1\2 \1/
 
 And execute the script on a file
 
-```script.sed README.md```
+```bash
+script.sed README.md
+```
 
-```/``` delimiter for commands can be replaced with ```:,#%``` (non exhaustive)
+`/` delimiter for commands can be replaced with ```:,#%``` (non exhaustive)
 
 tutorial : http://www.grymoire.com/Unix/Sed.html
 
@@ -135,11 +143,13 @@ tutorial : http://www.grymoire.com/Unix/Sed.html
 
 Use `--color=auto` to highlight your matches (`alias grep='grep --color=auto'`)
 
-```grep ring text
+```bash
+grep ring text
 grep "\<ring\>" text # Search for the word ring using word boundary patterns
 grep "\<Ring\>" text
 grep -w Ring text
-grep "\<ring\>" text -i```
+grep "\<ring\>" text -i
+```
 
 - `-l` if you are only interested in the filenames for which there is a match
 - `-L` if you are only interested in the filenames for which there is no match
@@ -171,7 +181,9 @@ Used to manipulate columns from a file or standard input and print it on standar
 
 print second column :
 
-```echo -e "1 2 3\n4 5 6" | gawk '{print "$2"}'```
+```bash
+echo -e "1 2 3\n4 5 6" | gawk '{print "$2"}'
+```
 
 `$0` stands for all columns.
 
@@ -181,15 +193,21 @@ more infos : https://linuxconfig.org/learning-linux-commands-awk
 ## sort
 Sort lines of a file (or standard input) alphabetically
 
-```cat text | sort```
+```bash
+cat text | sort
+```
 
 You can specify which key can be used for sorting `-k`
-```echo -e "alice 9\nbob 200\ncharlie 1200\ndoug 35" | sort -k 2```
+```bash
+echo -e "alice 9\nbob 200\ncharlie 1200\ndoug 35" | sort -k 2
+```
 
 By default 9 is higher than 1200, use `-n` for numerical sort
 
 To sort values which uses K, M, G suffix, use the `-h` flag
-```echo -e "alice 9K\nbob 200M\ncharlie 1200G\ndoug 35" | sort -k 2 -h```
+```bash
+echo -e "alice 9K\nbob 200M\ncharlie 1200G\ndoug 35" | sort -k 2 -h
+```
 
 
 ## uniq
@@ -201,13 +219,15 @@ Terminal emulator, allows user to open a session on a computer, and reattach to 
 screen is resilient to broken connection, logout from main session. Unfortunately it is not yet resilient to power outage/reboot.
 
 To reattach to a screen session, it must be detached first `-d` flag, and it is reattached with the `-r` flag. If no session exists, it will fail. Using `-RD` flags will starts a screen session if none exists.
-```screen -RD```
+`screen -RD`
 
 You can have multiple screen session running, use `screen -ls` to list them, and specify which session you want to attach to after the reattach flag (`-R` or `-r`).
 
 You can specify the name of a screen session with `-S flag`
 
-```screen -S unicorn```
+```bash
+screen -S unicorn
+```
 
 Inside screen, you can send commands to create, new tabs, scroll (one major drawback of screen is that by default, you can no longer use your terminal scrollbar to view the history). All screen commands starts with `ctrl-a` followed by a letter :
 - `ctrl-a d` detach from your current screen session
@@ -225,7 +245,7 @@ By default it does not supports a lot of arithmetic functions (cos, sin, log, ..
 
 it can read from stdin and respects operator precedence :
 
-```
+```bash
 echo "5+5*3" | bc
 20
  echo "(5+5)*3" | bc
@@ -266,11 +286,15 @@ transform standard output of a command and and turn it into arguments to a piped
 
 remove files containing a pattern
 
-```grep "pattern" -l | xargs rm -i```
+```bash
+grep "pattern" -l | xargs rm -i
+```
 
 By default, arguments are pushed at the end of the command, you may want to insert them in the middle :
 
-```grep "pattern" -l | xargs -I{} cp {} destination_folder```
+```bash
+grep "pattern" -l | xargs -I{} cp {} destination_folder
+```
 
 ## bash shortcuts
 - `ctrl-a` go to beginning of the line
@@ -304,7 +328,9 @@ use `-h` to get a numan readable size.
 Stands for Disk Usage, reports size used by files in current folder and sub-folders
 
 If you are interested in the size of current folder, without the details of all the files use
-```du -s```
+```bash
+du -s
+```
 
 Add `-h` flag to get a human readable size.
 
@@ -315,7 +341,7 @@ Stands for MANual, gives manual page of provided command/function
 - use `?pattern` to search backward for a particular pattern
 - use `q` to quit
 
-```
+```bash
 man man
 man woman
 ```
@@ -325,11 +351,13 @@ Stands for Tape ARchive, a little while ago, the main support for storage were t
 
 `tar` is used to archive files into a .tar file
 
-```tar cf archive.tar <list of files>```
+```bash
+tar cf archive.tar <list of files>
+```
 
 You can add compression with `z` or `j` flag, in that case you should suffix your archive with respectively `.gz` or `bz2`
 
-`tar czf archive.tar.gz <list of files>```
+`tar czf archive.tar.gz <list of files>`
 
 to extract simply replace `c` with `x`
 
@@ -349,7 +377,7 @@ Part of `image-magick` tool suite, can be used to convert, crop, resize images
 ## diff
 perform diff between files
 
-```
+```bash
 diff file1 file2
 diff -U2 file1 file2
 ```
@@ -358,7 +386,7 @@ diff -U2 file1 file2
 ## pushd/popd
 used to push/pop directories into a stack for later use
 
-```
+```bash
 pwd
 --> /here
 pushd .
@@ -381,7 +409,7 @@ list open files with processes
 ## tr
 change set of character with another one
 
-```
+```bash
 echo "hello" | tr "[a-z]" "[A-Z]"
 echo "un deux trois" | tr " " "\n"
 echo "un deux trois" | tr " " "\n" | tr "\n" " "
@@ -391,7 +419,7 @@ echo "un deux trois" | tr " " "\n" | tr "\n" " "
 ## tee
 sends standard input to standard output and to log file
 
-```
+```bash
 ls | tee log.txt
 ```
 
@@ -399,14 +427,14 @@ ls | tee log.txt
 ## sleep
 Wait given amount of time, understands time quantifiers (s, m, h)
 
-```
+```bash
 sleep 3m; echo "wait a little before starting command"
 ```
 
 ## at
 run commands read on stdin at given time
 
-```
+```bash
 echo your_command.sh | at 19:00
 ```
 
@@ -415,7 +443,7 @@ Used to execute schedule commands
 
 You can define the period of execution of your command with a fine granularity (every five minutes, every third day of each month, ...)
 
-```
+```bash
 crontab -l # list schedule commands
 crontab -e # edit list of schedule commands
 ```
