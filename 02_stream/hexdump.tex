@@ -1,0 +1,45 @@
+\subsection{hexdump/xxd/od}
+
+\begin{frame}[fragile]{convert}
+  \begin{itemize}
+    \pause \item Dump binary content of a file to stdout
+    \pause \item Can dump in decimal, octal, hexadecimal
+    \pause \item Supports grouping of bytes
+    \pause \item Skip number of bytes at the beginning
+    \pause \item Dump requested number of bytes
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{convert}
+  \begin{exampleblock}{hexdump}
+    \begin{lstlisting}[showstringspaces=false,basicstyle=\tiny]
+hexdump -C out/main.pdf | head -3
+00000000  25 50 44 46 2d 31 2e 35  0a 25 d0 d4 c5 d8 0a 37  |%PDF-1.5.%.....7|
+00000010  33 20 30 20 6f 62 6a 0a  3c 3c 0a 2f 54 79 70 65  |3 0 obj.<<./Type|
+00000020  20 2f 58 4f 62 6a 65 63  74 0a 2f 53 75 62 74 79  | /XObject./Subty|
+    \end{lstlisting}
+  \end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{convert}
+  \begin{exampleblock}{xxd}
+    \begin{lstlisting}[showstringspaces=false,basicstyle=\tiny]
+xxd -g 1 out/main.pdf | head -3
+00000000: 25 50 44 46 2d 31 2e 35 0a 25 d0 d4 c5 d8 0a 37  %PDF-1.5.%.....7
+00000010: 33 20 30 20 6f 62 6a 0a 3c 3c 0a 2f 54 79 70 65  3 0 obj.<<./Type
+00000020: 20 2f 58 4f 62 6a 65 63 74 0a 2f 53 75 62 74 79   /XObject./Subty
+    \end{lstlisting}
+  \end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{convert}
+  \begin{exampleblock}{od}
+    \begin{lstlisting}[showstringspaces=false,basicstyle=\tiny]
+od -t x1 out/main.pdf | head -3
+0000000 25 50 44 46 2d 31 2e 35 0a 25 d0 d4 c5 d8 0a 37
+0000020 33 20 30 20 6f 62 6a 0a 3c 3c 0a 2f 54 79 70 65
+0000040 20 2f 58 4f 62 6a 65 63 74 0a 2f 53 75 62 74 79
+    \end{lstlisting}
+  \end{exampleblock}
+\end{frame}
+
