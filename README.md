@@ -40,9 +40,9 @@ head -5
 head -n 5
 ```
 
-### to a specific line
+### specify last line to display
 ```
-head -n +5
+head -n -5
 ```
 
 ## tail
@@ -54,7 +54,7 @@ tail -5
 tail -n 5
 ```
 
-### from a specific line
+### specify first line to display
 ```
 tail -n +5
 ```
