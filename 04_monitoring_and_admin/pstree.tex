@@ -1,0 +1,19 @@
+\subsection{pstree}
+
+\begin{frame}[fragile]{pstree}
+  \begin{itemize}
+    \pause \item Display list of processes in a tree view
+  \end{itemize}
+  \pause
+  
+  \begin{exampleblock}{Example}
+    \begin{lstlisting}[showstringspaces=false]
+pstree
+        |-screen-|-4*[bash]
+        |        |-2*[bash---vim]
+        |        |-bash---init.sh---make---make---sh---make---make---bash---bash---make-|-bash---genautomata
+        |        |                                                                      |-g++---cc1plus
+        |        |-bash---pstree
+    \end{lstlisting}
+  \end{exampleblock}
+\end{frame}
