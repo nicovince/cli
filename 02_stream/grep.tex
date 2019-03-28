@@ -1,5 +1,5 @@
 \subsection{grep}
-\begin{frame}[fragile]{grep}
+\begin{frame}[fragile]{Get Regular ExPression}
 \begin{itemize}
   \item \texttt{grep} stands for Get Regular Expression
   \pause
@@ -9,7 +9,7 @@
 \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]{grep}
+\begin{frame}[fragile]{Get Regular ExPression}
   \begin{exampleblock}{Basic usage - text sample}
     \begin{lstlisting}[showstringspaces=false,basicstyle=\tiny]
 > cat text
@@ -25,7 +25,7 @@ In the Land of Mordor where the Shadows lie.
   \end{exampleblock}
 \end{frame}
 
-\begin{frame}[fragile]{grep}
+\begin{frame}[fragile]{Get Regular ExPression}
   \begin{exampleblock}{Basic usage - search ring}
     \begin{lstlisting}[showstringspaces=false,basicstyle=\tiny]
 > grep ring text
@@ -35,7 +35,7 @@ One Ring to bring them all and in the darkness bind them
 \end{frame}
 
 
-\begin{frame}[fragile]{grep}
+\begin{frame}[fragile]{Get Regular ExPression}
   \begin{exampleblock}{Basic usage - search ring word}
     \begin{lstlisting}[showstringspaces=false,basicstyle=\tiny]
 > grep "\<ring\>" text
@@ -46,7 +46,7 @@ One Ring to bring them all and in the darkness bind them
 \end{frame}
 
 
-\begin{frame}[fragile]{grep}
+\begin{frame}[fragile]{Get Regular ExPression}
   \begin{exampleblock}{Basic usage - search ring}
     \begin{lstlisting}[showstringspaces=false,basicstyle=\tiny]
 > grep "\<Ring\>" text
@@ -57,7 +57,7 @@ One Ring to bring them all and in the darkness bind them
 \end{frame}
 
 
-\begin{frame}[fragile]{grep}
+\begin{frame}[fragile]{Get Regular ExPression}
   \begin{exampleblock}{Basic usage - search ring}
     \begin{lstlisting}[showstringspaces=false,basicstyle=\tiny]
 > grep -w Ring text
@@ -68,7 +68,7 @@ One Ring to bring them all and in the darkness bind them
 \end{frame}
 
 
-\begin{frame}[fragile]{grep}
+\begin{frame}[fragile]{Get Regular ExPression}
   \begin{exampleblock}{Basic usage - search ring}
     \begin{lstlisting}[showstringspaces=false,basicstyle=\tiny]
 > grep "\<ring\>" text -i
@@ -79,7 +79,7 @@ One Ring to bring them all and in the darkness bind them
 \end{frame}
 
 
-\begin{frame}[fragile]{grep options}
+\begin{frame}[fragile]{Grep options}
   \begin{itemize}
     \item \texttt{-l} if you are only interested in the filenames for which there is a match
     \pause \item \texttt{-L} if you are only interested in the filenames for which there is no match
@@ -94,7 +94,7 @@ One Ring to bring them all and in the darkness bind them
 \end{frame}
 
 
-\begin{frame}[fragile]{grep}
+\begin{frame}[fragile]{Example}
   \begin{exampleblock}{Basic usage}
     \begin{lstlisting}[showstringspaces=false]
 > echo -e "foo bar\nfoooo" | grep fo* -o

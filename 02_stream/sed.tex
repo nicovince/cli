@@ -1,6 +1,6 @@
 \subsection{sed}
 
-\begin{frame}[fragile]{sed}
+\begin{frame}[fragile]{Stream EDitor}
   \begin{itemize}
     \item Used to perform automatic edition on an input stream or an existing file
     \pause
@@ -8,7 +8,7 @@
   \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]{sed}
+\begin{frame}[fragile]{Stream EDitor}
   \begin{exampleblock}{Search and Replace}
     \begin{lstlisting}[showstringspaces=false,basicstyle=\tiny]
 sed 's/search/replace/g'
@@ -31,7 +31,7 @@ sed '3,5d'
   \end{exampleblock}
 \end{frame}
 
-\begin{frame}[fragile]{sed}
+\begin{frame}[fragile]{Stream EDitor}
 If you want to modify an existing files, instead of having sed doing modifications on standard input you can use \emph{-i} flag
 \pause
   \begin{exampleblock}{Modify file in-place}
@@ -42,7 +42,7 @@ sed -i.bak 's/search/replace/g' filename
   \end{exampleblock}
 \end{frame}
 
-\begin{frame}[fragile]{sed}
+\begin{frame}[fragile]{Stream EDitor}
 Sed can memorize patterns on the search side to reuse them on the replace side by using escaped parenthesis :
 \pause
   \begin{exampleblock}{Memorize patterns}
@@ -53,7 +53,7 @@ echo "# hello"  | sed 's/\(#*\)\(.*\)$/\1\2 \1/'
   \end{exampleblock}
 \end{frame}
 
-\begin{frame}[fragile]{sed}
+\begin{frame}[fragile]{Stream EDitor}
 If you have multiple operations to perform you can either pipe them, or put them in a sed script (script.sed, with executable rights)
 \pause
   \begin{exampleblock}{Sed script}
@@ -74,7 +74,7 @@ script.sed README.md
 \end{frame}
 
 
-\begin{frame}[fragile]{sed}
+\begin{frame}[fragile]{Stream EDitor}
   \begin{itemize}
     \item\emph{/} delimiter for commands can be replaced with \emph{:,\#\%} (non exhaustive)
     \pause

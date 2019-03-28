@@ -1,6 +1,6 @@
 \subsection{hexdump/xxd/od}
 
-\begin{frame}[fragile]{convert}
+\begin{frame}[fragile]{View binary files}
   \begin{itemize}
     \pause \item Dump binary content of a file to stdout
     \pause \item Can dump in decimal, octal, hexadecimal
@@ -10,7 +10,7 @@
   \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]{convert}
+\begin{frame}[fragile]{View binary files}
   \begin{exampleblock}{hexdump}
     \begin{lstlisting}[showstringspaces=false,basicstyle=\tiny]
 hexdump -C out/main.pdf | head -3
@@ -21,7 +21,7 @@ hexdump -C out/main.pdf | head -3
   \end{exampleblock}
 \end{frame}
 
-\begin{frame}[fragile]{convert}
+\begin{frame}[fragile]{View binary files}
   \begin{exampleblock}{xxd}
     \begin{lstlisting}[showstringspaces=false,basicstyle=\tiny]
 xxd -g 1 out/main.pdf | head -3
@@ -32,7 +32,7 @@ xxd -g 1 out/main.pdf | head -3
   \end{exampleblock}
 \end{frame}
 
-\begin{frame}[fragile]{convert}
+\begin{frame}[fragile]{View binary files}
   \begin{exampleblock}{od}
     \begin{lstlisting}[showstringspaces=false,basicstyle=\tiny]
 od -t x1 out/main.pdf | head -3
