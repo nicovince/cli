@@ -50,14 +50,12 @@
 
 \AtBeginSection[]
 {
-  %% \setbeamercovered{dynamic}
-  \begin{framewoheader}
-    \frametitle{Plan}
-    \setcounter{tocdepth}{1}
-    \tableofcontents[sections={1-7},currentsection]
-    \setcounter{tocdepth}{3}
-  \end{framewoheader}
-  %% \setbeamercovered{invisible}
+\begin{frame}<beamer>{Table of Contents}
+\tableofcontents[currentsection,currentsubsection, 
+    hideothersubsections, 
+    sectionstyle=show/shaded,
+]
+\end{frame}
 }
 
 \newcounter{InterludeId}
@@ -87,7 +85,7 @@
 \end{framewoheader}
 
 \subimport{01_general/}{all.tex}
-%\subimport{02_stream/}{all.tex}
+\subimport{02_stream/}{all.tex}
 %\subimport{03_interactive/}{all.tex}
 %\subimport{04_monitoring_and_admin/}{all.tex}
 %\subimport{05_unclassified/}{all.tex}
