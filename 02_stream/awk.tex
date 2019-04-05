@@ -1,7 +1,7 @@
 \subsection{awk}
 
 \begin{frame}[fragile]{Line manipulation}
-Used to manipulate colums from a file or stadard input ad print it on standard output.
+Used to manipulate colums from a file or standard input and print it on standard output.
   \pause
   \begin{exampleblock}{Print second column}
     \begin{lstlisting}[showstringspaces=false]
@@ -12,6 +12,32 @@ Used to manipulate colums from a file or stadard input ad print it on standard o
   \end{exampleblock}
 \pause
 \emph{\$0} stands for all columns
+\pause
+
+\end{frame}
+
+\begin{frame}[fragile]{Line manipulation}
+Some One Liners
+  \pause
+  \begin{exampleblock}{Print all lines until pattern}
+    \begin{lstlisting}[showstringspaces=false]
+awk '1;/pattern/{exit}' file
+    \end{lstlisting}
+  \end{exampleblock}
+  \pause
+
+  \begin{exampleblock}{Print all lines between pattern}
+    \begin{lstlisting}[showstringspaces=false]
+awk '/begin pattern/,/end pattern/' file
+    \end{lstlisting}
+  \end{exampleblock}
+  \pause
+
+  \begin{exampleblock}{Print all lines after pattern}
+    \begin{lstlisting}[showstringspaces=false]
+awk '/pattern/{p=1;next}p'
+    \end{lstlisting}
+  \end{exampleblock}
 \pause
 
 more infos : https://linuxconfig.org/learning-linux-commands-awk
