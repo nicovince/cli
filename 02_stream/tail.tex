@@ -1,6 +1,6 @@
 \subsection{tail}
 
-\begin{frame}[fragile]{View end of file}
+\begin{frame}[fragile]{Show end of file}
   \begin{exampleblock}{Get the last 10 lines of a file (or stdin)}
     \begin{lstlisting}[showstringspaces=false,basicstyle=\tiny]
 tail
@@ -25,7 +25,7 @@ tail -n +5
 
 
 \begin{frame}[fragile]{View end of file}
-  \begin{exampleblock}{Monitor a file on live}
+  \begin{exampleblock}{Continously monitor a file}
     \begin{lstlisting}[showstringspaces=false,basicstyle=\tiny]
 tail -f <file>
     \end{lstlisting}
@@ -36,7 +36,7 @@ Particulary useful for non-rolling log files
 Be aware -f file follow the inode and not the file.
 
   \pause
-  \begin{exampleblock}{Monitor a rolling file on live}
+  \begin{exampleblock}{Continously monitor a rolling file}
     \begin{lstlisting}[showstringspaces=false,basicstyle=\tiny]
 tail -F <file>
     \end{lstlisting}
