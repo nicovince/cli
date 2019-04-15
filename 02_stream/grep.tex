@@ -25,11 +25,12 @@ In the Land of Mordor where the Shadows lie.
   \end{exampleblock}
 \end{frame}
 
+\definecolor{light-gray}{gray}{0.80}
 \begin{frame}[fragile]{Get Regular ExPression}
   \begin{exampleblock}{Basic usage - search ring}
-    \begin{lstlisting}[showstringspaces=false,basicstyle=\tiny]
+    \begin{lstlisting}[showstringspaces=false,basicstyle=\tiny,escapechar=!]
 > grep ring text
-One Ring to bring them all and in the darkness bind them
+One Ring to b!\colorbox{light-gray}{ring}! them all and in the darkness bind them
     \end{lstlisting}
   \end{exampleblock}
 \end{frame}
@@ -39,6 +40,7 @@ One Ring to bring them all and in the darkness bind them
   \begin{exampleblock}{Basic usage - search ring word}
     \begin{lstlisting}[showstringspaces=false,basicstyle=\tiny]
 > grep "\<ring\>" text
+> grep -w "ring" text
     \end{lstlisting}
   \end{exampleblock}
   \pause
