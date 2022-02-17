@@ -2,29 +2,29 @@
 
 \begin{frame}{Persistent Terminal}
 \begin{itemize}
-\pause \item Terminal emulator
-\pause \item Allows user to reattach to a session opened previously
-\pause \item Keeps running if you close your putty/terminal
-\pause \item Resilient to broken connection
-\pause \item Not resilient to power outage/reboot
-\pause \item Multiple tmux sessions can be running on the same computer
-\pause \item List available sessions with \texttt{list-sessions} sub-command
-\pause \item Screen session can be named at creation with \texttt{-s} flag
-\pause \item Use \texttt{att -t <name>} to create or reattach to an existing session
+\item Terminal emulator
+\item Allows user to reattach to a session opened previously
+\item Keeps running if you close your putty/terminal
+\item Resilient to broken connection
+\item Not resilient to power outage/reboot
+\item Multiple tmux sessions can be running on the same computer
+\item List available sessions with \texttt{list-sessions} sub-command
+\item Screen session can be named at creation with \texttt{-s} flag
+\item Use \texttt{att -t <name>} to create or reattach to an existing session
 \end{itemize}
 \end{frame}
 
 \begin{frame}{Navigation inside tmux}
 \begin{itemize}
-  \pause \item You can send commands to tmux to create windows, navigate, scroll
-  \pause \item All tmux commands starts with \texttt{ctrl-b} followed by a letter
-  \pause \item \texttt{ctrl-b d} : detach from your current tmux session
-  \pause \item \texttt{ctrl-b c} : Creates a new window with a shell
-  \pause \item \texttt{ctrl-b n} : go to next window
-  \pause \item \texttt{ctrl-b w} : display list of available windows
-  \pause \item \texttt{ctrl-b ,} : prompt to rename a window
-  \pause \item \texttt{ctrl-b <page-up>} : switch to history/scroll mode
-  \pause \item Type \texttt{<enter>} to quit scroll mode
+\item You can send commands to tmux to create windows, navigate, scroll
+\item All tmux commands starts with \texttt{ctrl-b} followed by a letter
+\item \texttt{ctrl-b d} : detach from your current tmux session
+\item \texttt{ctrl-b c} : Creates a new window with a shell
+\item \texttt{ctrl-b n} : go to next window
+\item \texttt{ctrl-b w} : display list of available windows
+\item \texttt{ctrl-b ,} : prompt to rename a window
+\item \texttt{ctrl-b <page-up>} : switch to history/scroll mode
+\item Type \texttt{<enter>} to quit scroll mode
 \end{itemize}
 \pause
 Cheatsheet: https://gist.github.com/henrik/1967800
