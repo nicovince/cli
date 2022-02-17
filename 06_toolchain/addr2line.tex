@@ -1,0 +1,10 @@
+\subsection{addr2line}
+
+\begin{frame}[fragile]{Use memory address}
+  \begin{exampleblock}{From PC to source line}
+    \begin{lstlisting}[showstringspaces=false, basicstyle=\tiny]
+arm-zephyr-eabi-addr2line -e zephyr.elf -C 0x08000a70
+zephyr/samples/net/mqtt_publisher/src/main.c:147
+    \end{lstlisting}
+  \end{exampleblock}
+\end{frame}

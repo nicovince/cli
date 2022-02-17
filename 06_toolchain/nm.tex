@@ -1,0 +1,16 @@
+\subsection{nm}
+
+\begin{frame}[fragile]{Inspect elf file}
+  \begin{exampleblock}{List symbols in object file (.o, .elf,)}
+    \begin{lstlisting}[showstringspaces=false]
+arm-zephyr-eabi-nm zephyr.elf
+0800fe9c T z_timer_expiration_handler
+0800f58c T z_time_slice
+08017326 T z_unpend1_no_timeout
+08017380 T z_unpend_all
+08017350 T z_unpend_first_thread
+0801720e T z_unpend_thread
+080171ee T z_unpend_thread_no_timeout
+    \end{lstlisting}
+  \end{exampleblock}
+\end{frame}

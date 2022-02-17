@@ -1,0 +1,17 @@
+\subsection{objdump}
+
+\begin{frame}[fragile]{Inspect elf file}
+  \begin{exampleblock}{Show assembly in elf file}
+    \begin{lstlisting}[showstringspaces=false]
+arm-zephyr-eabi-objdump -d zephyr.elf
+...
+08000a70 <mqtt_evt_handler>:
+ 8000a70:  b573  push  {r0, r1, r4, r5, r6, lr}
+ 8000a72:  780b  ldrb  r3, [r1, #0]
+ 8000a74:  4606  mov   r6, r0
+ 8000a76:  460c  mov   r4, r1
+ 8000a78:  2b09  cmp   r3, #9
+...
+    \end{lstlisting}
+  \end{exampleblock}
+\end{frame}
