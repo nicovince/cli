@@ -30,6 +30,18 @@ xxd -g 1 out/main.pdf | head -3
 00000020: 20 2f 58 4f 62 6a 65 63 74 0a 2f 53 75 62 74 79   /XObject./Subty
     \end{lstlisting}
   \end{exampleblock}
+  \pause
+  \begin{exampleblock}{dump c array}
+    \begin{lstlisting}[showstringspaces=false,basicstyle=\tiny]
+xxd -i out/main.pdf
+unsigned char out_main_pdf[] = {
+  0x25, 0x50, 0x44, 0x46, 0x2d, 0x31, 0x2e, 0x35, 0x0a, 0x25, 0xd0, 0xd4,
+  ...
+  0x46, 0x0a
+};
+unsigned int out_main_pdf_len = 472730;
+    \end{lstlisting}
+  \end{exampleblock}
 \end{frame}
 
 \begin{frame}[fragile]{View binary files}

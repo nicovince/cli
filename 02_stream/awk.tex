@@ -3,8 +3,17 @@
 \begin{frame}[fragile]{Line manipulation}
 Used to manipulate colums from a file or standard input and print it on standard output.
   \pause
+  \begin{exampleblock}{Input for awk command}
+    \begin{lstlisting}[showstringspaces=false,basicstyle=\tiny]
+1 2 3
+4 5 6
+    \end{lstlisting}
+  \end{exampleblock}
+
+  \pause
+
   \begin{exampleblock}{Print second column}
-    \begin{lstlisting}[showstringspaces=false]
+    \begin{lstlisting}[showstringspaces=false,basicstyle=\tiny]
 > echo -e "1 2 3\n4 5 6" | gawk '{print $2}'
 2
 5
@@ -12,8 +21,10 @@ Used to manipulate colums from a file or standard input and print it on standard
   \end{exampleblock}
   \pause
   \begin{exampleblock}{Same result with cut}
-    \begin{lstlisting}[showstringspaces=false]
- echo -e "1 2 3\n4 5 6" | cut -d' ' -f 2
+    \begin{lstlisting}[showstringspaces=false,basicstyle=\tiny]
+> echo -e "1 2 3\n4 5 6" | cut -d' ' -f 2
+2
+5
     \end{lstlisting}
   \end{exampleblock}
 \pause

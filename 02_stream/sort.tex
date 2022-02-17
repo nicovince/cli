@@ -1,9 +1,18 @@
 \subsection{sort}
 
 \begin{frame}[fragile]{Sort input}
-Sort lines of a file (or standard input) alphabetically
+Sort lines of a file (or standard input) alphabetically (default alpha-numeric)
   \pause
-  \begin{exampleblock}{specify key used for sorting}
+  \begin{exampleblock}{sort input}
+    \begin{lstlisting}[showstringspaces=false,basicstyle=\tiny]
+alice 1
+bob 200
+charlie 1200
+doug 35
+    \end{lstlisting}
+  \end{exampleblock}
+  \pause
+  \begin{exampleblock}{Sort lines based on second column value}
     \begin{lstlisting}[showstringspaces=false,basicstyle=\tiny]
 > echo -e "alice 1\nbob 200\ncharlie 1200\ndoug 35" | sort -k 2
 alice 1
@@ -12,8 +21,6 @@ bob 200
 doug 35
     \end{lstlisting}
   \end{exampleblock}
-\pause
-Sort is alpha-numerical by default
 \end{frame}
 
 \begin{frame}[fragile]{Sort input}
@@ -34,9 +41,17 @@ charlie 1200
 \begin{frame}[fragile]{Sort input}
 To sort values which uses K, M, G suffix, use the \emph{-h} flag
 \pause
+  \begin{exampleblock}{Sort input}
+    \begin{lstlisting}[showstringspaces=false,basicstyle=\tiny]
+alice 9K
+bob 200M
+charlie 1200G
+doug 35
+    \end{lstlisting}
+  \end{exampleblock}
+  \pause
   \begin{exampleblock}{Sort with suffixes}
     \begin{lstlisting}[showstringspaces=false,basicstyle=\tiny]
-\pause
 > echo -e "alice 9K\nbob 200M\ncharlie 1200G\ndoug 35" | sort -k 2 -h
 doug 35
 alice 9K

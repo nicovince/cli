@@ -6,8 +6,15 @@
   \pause \item Often used after a \emph{sort} operation. (\emph{sort -u} would do the job)
 \end{itemize}
   \pause
+  \begin{exampleblock}{uniq input}
+    \begin{lstlisting}[showstringspaces=false,basicstyle=\tiny]
+a
+a
+    \end{lstlisting}
+  \end{exampleblock}
+  \pause
   \begin{exampleblock}{}
-    \begin{lstlisting}[showstringspaces=false]
+    \begin{lstlisting}[showstringspaces=false,basicstyle=\tiny]
 > echo -e "a\na" | uniq
 a
     \end{lstlisting}
@@ -15,8 +22,17 @@ a
 \end{frame}
 
 \begin{frame}[fragile]{Uniquify}
+  \begin{exampleblock}{sort input (with non adjacent repetitions)}
+    \begin{lstlisting}[showstringspaces=false,basicstyle=\tiny]
+a
+a
+b
+a
+    \end{lstlisting}
+  \end{exampleblock}
+  \pause
   \begin{exampleblock}{}
-    \begin{lstlisting}[showstringspaces=false]
+    \begin{lstlisting}[showstringspaces=false,basicstyle=\tiny]
 > echo -e "a\na\nb\na" | uniq
 a
 b

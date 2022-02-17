@@ -91,14 +91,34 @@ One Ring to bring them all and in the darkness bind them
     \pause \item \texttt{-v} display lines which do not match the pattern
     \pause \item \texttt{-A 2} display two lines of context after the match
     \pause \item \texttt{-B 2} display two lines of context before the match
-    \pause \item \texttt{-o} display only the matching part 
+    \pause \item \texttt{-o} display only the matching part
   \end{itemize}
 \end{frame}
 
 
-\begin{frame}[fragile]{Example}
-  \begin{exampleblock}{Basic usage}
-    \begin{lstlisting}[showstringspaces=false]
+\begin{frame}[fragile]{Example -o}
+  \begin{exampleblock}{Generate input for grep command}
+    \begin{lstlisting}[showstringspaces=false,basicstyle=\tiny]
+> echo -e "foo bar\nfoooo"
+foo bar
+foooo
+    \end{lstlisting}
+  \end{exampleblock}
+
+  \pause
+
+  \begin{exampleblock}{without -o}
+    \begin{lstlisting}[showstringspaces=false,basicstyle=\tiny]
+> echo -e "foo bar\nfoooo" | grep foo
+foo bar
+foooo
+    \end{lstlisting}
+  \end{exampleblock}
+
+  \pause
+
+  \begin{exampleblock}{Display matching part with -o}
+    \begin{lstlisting}[showstringspaces=false,basicstyle=\tiny]
 > echo -e "foo bar\nfoooo" | grep fo* -o
 foo
 foooo
