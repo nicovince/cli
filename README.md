@@ -1,6 +1,12 @@
 # cli
 presentation for command line interface tools for linux/unix
 
+## Compilation instructions:
+```
+sudo apt install texlive-latex-base texlive-latex-recommended texlive-pictures texlive-latex-extra texlive-lang-french
+make
+```
+
 ## cd
 
 ### Go back to previous directory
