@@ -1,0 +1,22 @@
+\subsection{numfmt}
+
+\begin{frame}[fragile]{Format number to human readable}
+  \begin{exampleblock}{Format to SI unit}
+    \begin{lstlisting}[showstringspaces=false,basicstyle=\tiny]
+> echo -e "1000\n1000000\n1234567890" | numfmt --to=si --format="%.2f
+1,00K
+1,00M
+1,24G
+    \end{lstlisting}
+  \end{exampleblock}
+\pause
+  \begin{exampleblock}{Format to SI unit}
+    \begin{lstlisting}[showstringspaces=false,basicstyle=\tiny]
+echo -e "1024\n1048576\n123456789" | numfmt --to=iec-i --format="%9.2f" --suffix=B
+  1,00KiB
+  1,00MiB
+117,74MiB
+    \end{lstlisting}
+  \end{exampleblock}
+\end{frame}
+
